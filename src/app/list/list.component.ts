@@ -51,14 +51,6 @@ export class ListComponent implements OnInit {
       todayDate: new Date()
 
     },
-    {
-      imgURL: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Farm_barn_scenic_landscape.jpg',
-      heading: this.generateRandomString(),
-      desc1: 'this is description line1',
-      desc2: 'this is description line 2',
-      todayDate: new Date()
-
-    }
   ];
   generateRandomString(): string {
     const string1: string = Math.random().toString(36).substring(9);
@@ -75,19 +67,21 @@ export class ListComponent implements OnInit {
 
   }
   loadMore(): void{
-    if(this.lists.length <= 4 ){
       this.addListItem();
-      this.buttonString = 'Collapse';
-    }
-    if(this.lists.length > 4){
-      this.lists.splice(0,2);
-      this.buttonString = 'Load more';
-    }
-  }
+      this.addListItem();
 
+
+  }
+  collapse() {
+    this.lists = [];
+    this.total = 0;
+    this.badge = 0;
+
+  }
   ngOnInit() {
 
 
   }
+
 
 }

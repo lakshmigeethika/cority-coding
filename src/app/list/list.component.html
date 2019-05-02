@@ -1,28 +1,34 @@
 <div class="container">
   <ul>
     <div class="header">
+      <img class="add" (click)="addListItem()" src="https://img.icons8.com/material/24/000000/plus-math.png">
+      <img class="drop-down" (click) = "collapse()" src="https://img.icons8.com/material/24/000000/sort-down.png">
       <p><span id="listname" >List Name</span>&nbsp;
         &nbsp;<span id="circle">{{ badge }}</span>
-        <span id="plus-button"><button (click)="addListItem()">+</button></span>
         <br>
-        <span id="total"> Total {{total}}</span>
+        <span class="total"> Total {{total}}</span>
       </p>
     </div>
    <!-- <li *ngFor="let name of names">{{ name }}</li> -->
 
-    <li *ngFor="let list of lists; index as i " [className]="this.border && i==0 ? 'left-border' : ''" >
+    <li *ngFor="let list of lists; index as i " [ngClass]="{'wrap' : true ,'left-border' : this.border && i==0 }"   >
       <div class="w-20">
-        <img [src]="list.imgURL ? list.imgURL : 'https://images.unsplash.com/photo-1502210109953-6c28c3416826?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80' " alt="list-image">
+        <img class="main-img" [src]="list.imgURL ? list.imgURL : 'https://images.unsplash.com/photo-1502210109953-6c28c3416826?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80' " alt="list-image">
       </div>
       <div class="w-80">
+        <img class="ellipse" src="https://img.icons8.com/small/16/000000/menu-2.png">
         <h3 class="heading">{{ list.heading }}</h3>
         <h4 class="description1">{{ list.desc1 }}</h4>
         <p>{{ list.desc2 }}</p>
-        <p>{{ list.todayDate | date : 'EE LLL dd yyyy'}}</p>
+        <span>
+        <img class="cal-icon" src="https://img.icons8.com/ios/26/000000/calendar-filled.png">
+        <span class="date">{{ list.todayDate | date : 'EE LLL dd yyyy'}}
+        </span>
+</span>
       </div>
     </li>
     <div class='footer'>
-    <button class="footer-button"  (click)="loadMore()"> {{ buttonString }}</button>
+    <button class="footer-button"  (click)="addListItem()"> {{ buttonString }}</button>
      </div>
 
   </ul>
