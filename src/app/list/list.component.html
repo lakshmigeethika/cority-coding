@@ -1,0 +1,27 @@
+<div class="container">
+  <ul>
+    <div class="header">
+      <p><span id="listname" >List Name</span>&nbsp;&nbsp;<span id="circle">1</span><br>
+        <span id="total"> Total 3</span>
+      </p>
+    </div>
+   <!-- <li *ngFor="let name of names">{{ name }}</li> -->
+
+    <li *ngFor="let list of lists">
+      <div class="w-20">
+        <img src=" {{ list.imgURL }} " alt="list-image">
+      </div>
+      <div class="w-80">
+        <h3 class="heading">{{ list.heading }}</h3>
+        <h4 class="description1">{{ list.desc1 }}</h4>
+        <p>{{ list.desc2 }}</p>
+        <p>{{ list.todayDate | date : 'fullDate'}}</p>
+      </div>
+    </li>
+
+
+  </ul>
+
+</div>
+
+
