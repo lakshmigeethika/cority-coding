@@ -37,7 +37,15 @@ li{
   list-style: none;
   padding: 20px;
   border: solid 2px gray;
+  border-bottom: none;
   height: 150px;
+}
+li:last-child{
+  border-bottom: solid 2px gray;
+
+}
+li.left-border{
+  border-left: solid 5px blue;
 }
 li div{
   float: left;
@@ -53,4 +61,17 @@ img {
 }
 .w-80{
   width: 80%;
+}
+.footer-button{
+  width: 100%;
+  background: #dbd6d6;
+  color: blue;
+  font-size: 22px;
+  text-decoration: underline;
+  margin: 0;
+  height: 40px;
+}
+.footer-button:active, footer-button:focus{
+  outline: none !important;
+  border: none;
 }

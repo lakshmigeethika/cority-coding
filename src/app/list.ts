@@ -5,4 +5,11 @@ export class List{
   desc2: string;
   todayDate: number;
 
+  /* constructor(private imgURL: string, private heading: string, private desc1: string, desc2){
+  this.imgURL = imgURL;
+  this.heading = heading;
+  this.desc1 = desc1;
+  this.desc2 = desc2;
+  this.todayDate = new Date();
+} */
 }
