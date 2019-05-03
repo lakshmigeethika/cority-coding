@@ -108,6 +108,22 @@ li div{
 .date{
   padding-bottom: 5px;
 }
+.extra-buttons{
+  position: absolute;
+  right: 180px;
+  top: 40px;
+}
+.delete{
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+.download{
+  width: 50px;
+  height: 50px;
+  background: green;
+
+}
 .footer-button{
   width: 100%;
   background: #dbd6d6;

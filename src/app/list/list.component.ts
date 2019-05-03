@@ -8,19 +8,12 @@ import {List} from '../list';
 export class ListComponent implements OnInit {
   constructor() { }
   border: boolean;
-  badge = 0;
   total = 3;
-  badge: number;
-  buttonString: string = "Load more"
+  badge: number = 0;
+  hide = [];
+  buttonString: string = "Load more";
   toAdd1: List = {
     imgURL: '',
-    heading: this.generateRandomString(),
-    desc1: 'this is description line1',
-    desc2: 'this is description line 2',
-    todayDate: new Date()
-  };
-  toAdd2: List = {
-    imgURL: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Farm_barn_scenic_landscape.jpg',
     heading: this.generateRandomString(),
     desc1: 'this is description line1',
     desc2: 'this is description line 2',
@@ -66,22 +59,22 @@ export class ListComponent implements OnInit {
     this.lists.unshift(this.toAdd1);
 
   }
-  loadMore(): void{
-      this.addListItem();
-      this.addListItem();
-
-
-  }
   collapse() {
     this.lists = [];
     this.total = 0;
     this.badge = 0;
 
   }
+
+  deleteEntry(private index: number) {
+  this.lists.splice(index, 1);
+  this.total--;
+  }
   ngOnInit() {
 
 
   }
+
 
 
 }
