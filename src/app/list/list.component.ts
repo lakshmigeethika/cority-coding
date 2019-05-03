@@ -66,7 +66,7 @@ export class ListComponent implements OnInit {
 
   }
 
-  deleteEntry(private index: number) {
+  deleteEntry(index) {
   this.lists.splice(index, 1);
   this.total--;
   }

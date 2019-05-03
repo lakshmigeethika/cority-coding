@@ -3,7 +3,7 @@ export class List{
   heading: string;
   desc1: string;
   desc2: string;
-  todayDate: number;
+  todayDate: Date;
 
   /* constructor(private imgURL: string, private heading: string, private desc1: string, desc2){
   this.imgURL = imgURL;
